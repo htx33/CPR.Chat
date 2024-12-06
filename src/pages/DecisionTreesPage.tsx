@@ -3,7 +3,7 @@ import { decisionTrees } from '../data/decisionTreeData';
 import DecisionTreeComponent from '../components/DecisionTree/DecisionTreeComponent';
 
 const DecisionTreesPage: React.FC = () => {
-  const [selectedTreeId, setSelectedTreeId] = useState<string | null>(null);
+  const [selectedTreeId, setSelectedTreeId] = useState<string | null>(decisionTrees[0]?.id || null);
 
   const selectedTree = decisionTrees.find(tree => tree.id === selectedTreeId);
 
@@ -41,11 +41,12 @@ const DecisionTreesPage: React.FC = () => {
         </div>
       </div>
 
-      <div className="max-w-3xl mx-auto transition-all duration-300">
+      <div className="max-w-3xl mx-auto">
         {selectedTree ? (
-          <div>
+          <div className="transition-all duration-300 ease-in-out">
             <h2 className="text-2xl font-semibold text-gray-800 mb-6">{selectedTree.title}</h2>
             <DecisionTreeComponent 
+              key={selectedTree.id} 
               tree={selectedTree} 
               onReset={handleReset}
             />
