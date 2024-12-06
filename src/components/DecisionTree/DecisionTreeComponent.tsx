@@ -1,15 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { DecisionTree, DecisionNode } from '../../data/decisionTreeData';
 
 interface Props {
   tree: DecisionTree;
+  onReset?: () => void;
 }
 
-const DecisionTreeComponent: React.FC<Props> = ({ tree }) => {
+const DecisionTreeComponent: React.FC<Props> = ({ tree, onReset }) => {
   const [currentNodeId, setCurrentNodeId] = useState(tree.initialNodeId);
   const [history, setHistory] = useState<string[]>([]);
   const [showOutcome, setShowOutcome] = useState(false);
   const [outcome, setOutcome] = useState<{ text: string; recommendation: string } | null>(null);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+
+  useEffect(() => {
+    // Reset state when tree changes
+    setCurrentNodeId(tree.initialNodeId);
+    setHistory([]);
+    setShowOutcome(false);
+    setOutcome(null);
+    setIsTransitioning(true);
+    
+    // Add a small delay for smooth transition
+    const timer = setTimeout(() => {
+      setIsTransitioning(false);
+    }, 300);
+
+    return () => clearTimeout(timer);
+  }, [tree.id]);
 
   const currentNode = tree.nodes.find(node => node.id === currentNodeId);
 
@@ -40,12 +58,15 @@ const DecisionTreeComponent: React.FC<Props> = ({ tree }) => {
     setHistory([]);
     setShowOutcome(false);
     setOutcome(null);
+    if (onReset) {
+      onReset();
+    }
   };
 
   if (!currentNode) return null;
 
   return (
-    <div className="max-w-3xl mx-auto">
+    <div className={`transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
       {showOutcome ? (
         <div className="bg-white rounded-lg shadow-md p-6 space-y-4">
           <h3 className="text-xl font-semibold text-blue-600">{outcome?.text}</h3>
