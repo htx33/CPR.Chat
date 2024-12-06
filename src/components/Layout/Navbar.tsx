@@ -43,14 +43,14 @@ const Navbar = () => {
               Protocols
             </Link>
             <Link
-              to="/quizzes"
+              to="/chatdpt"
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-                isActive('/quizzes')
+                isActive('/chatdpt')
                   ? 'bg-white text-blue-600 shadow-md'
                   : 'hover:bg-white/10 hover:shadow-md'
               }`}
             >
-              Quizzes
+              ChatDPT
             </Link>
             <Link
               to="/ai-prompts"
