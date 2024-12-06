@@ -259,22 +259,6 @@ export const protocolData: Protocol[] = [
     ]
   },
   {
-    id: "acl-meniscus",
-    title: "ACL Reconstruction with Meniscus Repair Protocol",
-    description: "Modified protocol for ACL reconstruction with concurrent meniscal repair",
-    phases: [
-      {
-        name: "Phase I - Protection Phase",
-        duration: "Weeks 0-6",
-        keyPoints: [
-          "Protected weight bearing (PWB)",
-          "ROM restrictions based on repair type",
-          "Basic strengthening within limitations"
-        ]
-      }
-    ]
-  },
-  {
     id: "rotator-cuff-repair",
     title: "Rotator Cuff Repair Protocol",
     description: "Progressive rehabilitation following arthroscopic rotator cuff repair",
@@ -309,15 +293,99 @@ export const protocolData: Protocol[] = [
   {
     id: "lumbar-fusion",
     title: "Lumbar Fusion Protocol",
-    description: "Structured rehabilitation following lumbar spinal fusion surgery",
+    description: "Comprehensive rehabilitation protocol for lumbar spinal fusion surgery with focus on proper progression and spine protection.",
     phases: [
       {
         name: "Phase I - Protection Phase",
         duration: "Weeks 0-6",
         keyPoints: [
-          "Strict brace compliance",
-          "Log roll technique",
-          "Walking program within pain limits"
+          "No bending, lifting (>5 lbs), or twisting (BLT restrictions)",
+          "Maintain proper spine alignment",
+          "Use log roll technique for bed mobility",
+          "Wear brace if prescribed by surgeon"
+        ],
+        exercises: [
+          "Walking program starting with 5-10 minutes, 3-4x/day",
+          "Ankle pumps",
+          "Gentle neural glides",
+          "Isometric core activation",
+          "Supported standing with proper posture"
+        ],
+        goals: [
+          "Independent with proper body mechanics",
+          "Pain management",
+          "Gradual increase in walking tolerance"
+        ]
+      },
+      {
+        name: "Phase II - Initial Strengthening",
+        duration: "Weeks 6-12",
+        keyPoints: [
+          "Continue BLT restrictions as directed",
+          "Begin gentle range of motion exercises",
+          "Focus on proper movement patterns"
+        ],
+        exercises: [
+          "Walking program progression",
+          "Gentle hip mobility exercises",
+          "Supported bridges",
+          "Wall slides",
+          "Modified bird dog exercises",
+          "Aquatic therapy if approved"
+        ],
+        goals: [
+          "Improved walking endurance",
+          "Normal gait pattern",
+          "Basic core activation"
+        ]
+      },
+      {
+        name: "Phase III - Progressive Strengthening",
+        duration: "Weeks 12-16",
+        keyPoints: [
+          "Begin lifting restrictions may be modified",
+          "Progress to more functional exercises",
+          "Focus on work-specific activities"
+        ],
+        exercises: [
+          "Progressive walking program",
+          "Stationary biking",
+          "Basic core strengthening",
+          "Hip strengthening exercises",
+          "Gentle thoracic mobility",
+          "Body weight squats with support"
+        ],
+        goals: [
+          "Return to light work duties",
+          "Improved core strength",
+          "Normal daily activities with proper mechanics"
+        ]
+      },
+      {
+        name: "Phase IV - Return to Activity",
+        duration: "Months 4-6",
+        keyPoints: [
+          "Progress to full activities as tolerated",
+          "Focus on work hardening if needed",
+          "Continue proper body mechanics"
+        ],
+        exercises: [
+          "Advanced core strengthening",
+          "Progressive resistance training",
+          "Work simulation activities",
+          "Balance training",
+          "Full body conditioning"
+        ],
+        goals: [
+          "Return to full work duties",
+          "Independent home exercise program",
+          "Normal activity level with proper mechanics"
+        ],
+        criteria: [
+          "Normal movement patterns",
+          "Good core control with activities",
+          "Fusion confirmed on imaging",
+          "Pain well managed with activity"
         ]
       }
     ]
@@ -325,15 +393,100 @@ export const protocolData: Protocol[] = [
   {
     id: "hip-labral-repair",
     title: "Hip Labral Repair Protocol",
-    description: "Rehabilitation protocol following arthroscopic hip labral repair",
+    description: "Progressive rehabilitation protocol following arthroscopic hip labral repair with focus on protecting the repair while optimizing function.",
     phases: [
       {
-        name: "Phase I - Initial Post-operative",
+        name: "Phase I - Maximum Protection",
         duration: "Weeks 0-4",
         keyPoints: [
-          "Protected weight bearing",
-          "ROM restrictions",
-          "Isometric exercises"
+          "Protect repair site",
+          "Weight bearing as specified by surgeon",
+          "Avoid hip flexion >90°",
+          "No external rotation >20°"
+        ],
+        exercises: [
+          "Ankle pumps",
+          "Quad sets",
+          "Gluteal sets",
+          "Abdominal isometrics",
+          "Protected heel slides",
+          "Prone lying for hip extension"
+        ],
+        goals: [
+          "Protect repair",
+          "Minimize pain and inflammation",
+          "Prevent muscle inhibition"
+        ]
+      },
+      {
+        name: "Phase II - Controlled Mobility",
+        duration: "Weeks 4-8",
+        keyPoints: [
+          "Progress weight bearing as tolerated",
+          "Begin gentle ROM exercises",
+          "Initiate basic strengthening"
+        ],
+        exercises: [
+          "Stationary bike (no resistance)",
+          "Bridge progressions",
+          "Clamshells",
+          "Straight leg raises (all planes)",
+          "Standing weight shifts",
+          "Pool walking if available"
+        ],
+        goals: [
+          "Full weight bearing",
+          "Normalize gait pattern",
+          "Improve basic hip strength"
+        ]
+      },
+      {
+        name: "Phase III - Strengthening",
+        duration: "Weeks 8-12",
+        keyPoints: [
+          "Progress strengthening",
+          "Begin functional exercises",
+          "Focus on core stability"
+        ],
+        exercises: [
+          "Progressive hip strengthening",
+          "Single leg balance activities",
+          "Step-ups/step-downs",
+          "Elliptical trainer",
+          "Core stabilization exercises",
+          "Gentle plyometrics"
+        ],
+        goals: [
+          "Normal gait on all surfaces",
+          "Good hip strength",
+          "Improved functional mobility"
+        ]
+      },
+      {
+        name: "Phase IV - Advanced Training",
+        duration: "Weeks 12-20",
+        keyPoints: [
+          "Sport-specific training",
+          "Advanced strengthening",
+          "Return to running program"
+        ],
+        exercises: [
+          "Advanced hip strengthening",
+          "Agility drills",
+          "Running progression",
+          "Sport-specific drills",
+          "Plyometric progression"
+        ],
+        goals: [
+          "Return to sport/activity",
+          "Full hip strength and ROM",
+          "Normal movement patterns"
+        ],
+        criteria: [
+          "Full pain-free ROM",
+          "Hip strength >90% of uninvolved",
+          "Successful completion of running program",
+          "Normal movement patterns with sport-specific activities"
         ]
       }
     ]

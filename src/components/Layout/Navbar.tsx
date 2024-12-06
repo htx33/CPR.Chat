@@ -39,6 +39,8 @@ const Navbar = () => {
           <div className="hidden sm:flex space-x-1">
             <NavLink to="/" isActive={isActive('/')} label="CPRs" />
             <NavLink to="/protocols" isActive={isActive('/protocols')} label="Protocols" />
+            <NavLink to="/dot-phrases" isActive={isActive('/dot-phrases')} label="Dot Phrases" />
+            <NavLink to="/decision-trees" isActive={isActive('/decision-trees')} label="Decision Trees" />
             <NavLink to="/chatdpt" isActive={isActive('/chatdpt')} label="ChatDPT" />
             <NavLink to="/ai-prompts" isActive={isActive('/ai-prompts')} label="AI Prompts" />
           </div>
@@ -49,6 +51,8 @@ const Navbar = () => {
           <div className="sm:hidden pb-4 space-y-2">
             <MobileNavLink to="/" isActive={isActive('/')} label="CPRs" onClick={() => setIsMenuOpen(false)} />
             <MobileNavLink to="/protocols" isActive={isActive('/protocols')} label="Protocols" onClick={() => setIsMenuOpen(false)} />
+            <MobileNavLink to="/dot-phrases" isActive={isActive('/dot-phrases')} label="Dot Phrases" onClick={() => setIsMenuOpen(false)} />
+            <MobileNavLink to="/decision-trees" isActive={isActive('/decision-trees')} label="Decision Trees" onClick={() => setIsMenuOpen(false)} />
             <MobileNavLink to="/chatdpt" isActive={isActive('/chatdpt')} label="ChatDPT" onClick={() => setIsMenuOpen(false)} />
             <MobileNavLink to="/ai-prompts" isActive={isActive('/ai-prompts')} label="AI Prompts" onClick={() => setIsMenuOpen(false)} />
           </div>
