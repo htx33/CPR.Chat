@@ -1,2 +1,10 @@
 /*
   Access-Control-Allow-Origin: *
+  Content-Type: text/javascript
+  X-Content-Type-Options: nosniff
+
+/*.css
+  Content-Type: text/css
+
+/*.js
+  Content-Type: text/javascript
