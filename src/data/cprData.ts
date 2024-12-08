@@ -1,172 +1,110 @@
 export interface CPR {
+  id: string;
   title: string;
+  subtitle: string;
   description: string;
-  criteria: string[];
-  accuracy: string;
+  clinicalCriteria: string[];
+  evidence: {
+    source: string;
+    sourceLink?: string;
+    successRate: string;
+    likelihoodRatio?: string;
+    cpgReferences: {
+      title: string;
+      section: string;
+      recommendation: string;
+      grade?: string;
+      link: string;
+      year: string;
+    }[];
+  };
 }
 
 export const cprData: CPR[] = [
   {
+    id: "spinal-manipulation",
     title: "Spinal Manipulation CPR for Low Back Pain",
+    subtitle: "Beneficial when 4 out of 5 criteria are present",
     description: "Helps predict if a patient with acute low back pain is likely to benefit from spinal manipulation",
-    criteria: [
-      "Duration of symptoms: Less than 16 days",
-      "No symptoms below the knee",
-      "Hip internal rotation: At least 1 hip with > 35 degrees of internal rotation",
-      "Low fear avoidance (measured by FABQ work subscale)",
-      "Absence of neurologic signs"
+    clinicalCriteria: [
+      "Duration of current episode of symptoms < 16 days",
+      "No symptoms distal to the knee",
+      "Hip internal rotation range of motion > 35° for at least one hip",
+      "Fear-Avoidance Beliefs Questionnaire work subscale score < 19 points",
+      "At least one hypomobile segment in the lumbar spine"
     ],
-    accuracy: "Beneficial when 4 out of 5 criteria are present"
+    evidence: {
+      source: "Flynn et al. (2002), validated by Childs et al. (2004)",
+      sourceLink: "https://pubmed.ncbi.nlm.nih.gov/12322811/",
+      successRate: "Success rate increases from 45% to 95% when 4/5 criteria are present",
+      likelihoodRatio: "Positive likelihood ratio: +24.38 (95% CI: 4.75, 139.72)",
+      cpgReferences: [
+        {
+          title: "Clinical Practice Guidelines Linked to the ICF from the Orthopaedic Section of the APTA",
+          section: "Manual Therapy: Thrust Manipulation",
+          recommendation: "Clinicians should consider utilizing thrust manipulative procedures to reduce pain and disability in patients with mobility deficits and acute low back and back-related buttock or thigh pain.",
+          grade: "Grade A",
+          link: "https://www.jospt.org/doi/10.2519/jospt.2012.42.4.A1",
+          year: "2021"
+        }
+      ]
+    }
   },
   {
+    id: "lumbar-stenosis",
     title: "Lumbar Spinal Stenosis CPR",
-    description: "Helps identify patients with low back pain who are likely to have lumbar spinal stenosis (LSS)",
-    criteria: [
-      "Age: Older than 50 years",
-      "Bilateral leg pain",
-      "Relief with flexion (bending forward or sitting)",
-      "Worsening symptoms with extension"
+    subtitle: "Diagnostic accuracy improves with more criteria met",
+    description: "Helps identify patients likely to have lumbar spinal stenosis based on history and physical examination",
+    clinicalCriteria: [
+      "Age > 60 years",
+      "Bilateral symptoms",
+      "Symptoms improve with sitting",
+      "Symptoms worsen with standing and walking",
+      "Good relief with forward bending"
     ],
-    accuracy: "High likelihood of LSS when all criteria are present"
+    evidence: {
+      source: "Cook et al. (2011)",
+      sourceLink: "https://pubmed.ncbi.nlm.nih.gov/21242568/",
+      successRate: "Sensitivity of 0.93 and specificity of 0.86 when 3/5 criteria are met",
+      likelihoodRatio: "Positive likelihood ratio: +6.64 (95% CI: 4.14, 10.6)",
+      cpgReferences: [
+        {
+          title: "NASS Evidence-Based Clinical Guidelines for Multidisciplinary Spine Care",
+          section: "Diagnosis/Imaging",
+          recommendation: "The history and physical examination are the most important tools in the diagnosis of lumbar spinal stenosis.",
+          grade: "Grade B",
+          link: "https://www.spine.org/Research-Clinical-Care/Quality-Improvement/Clinical-Guidelines",
+          year: "2020"
+        }
+      ]
+    }
   },
   {
+    id: "cervical-radiculopathy",
     title: "Cervical Radiculopathy CPR",
-    description: "Helps predict the likelihood of cervical radiculopathy in patients with neck pain and arm symptoms",
-    criteria: [
-      "Positive upper limb tension test (ULTT)",
-      "Positive Spurling's test",
-      "Positive cervical distraction test"
+    subtitle: "Diagnostic accuracy improves with more tests positive",
+    description: "Helps identify patients with cervical radiculopathy using a cluster of tests",
+    clinicalCriteria: [
+      "Upper limb tension test 1 positive",
+      "Cervical rotation < 60° toward the symptomatic side",
+      "Neck rotation toward the symptomatic side reproduces symptoms",
+      "Spurling test positive"
     ],
-    accuracy: "Highly likely when all 3 criteria are positive"
-  },
-  {
-    title: "Cervical Manipulation CPR",
-    description: "Identifies patients with acute neck pain who are likely to benefit from cervical manipulation",
-    criteria: [
-      "Age: Between 18-60 years",
-      "Symptoms lasting less than 38 days",
-      "No neurological signs",
-      "At least 10 degrees of cervical rotation difference between sides",
-      "No signs of centralization"
-    ],
-    accuracy: "Likely beneficial when 4/5 criteria are met"
-  },
-  {
-    title: "Shoulder Impingement Syndrome CPR",
-    description: "Helps diagnose shoulder impingement syndrome",
-    criteria: [
-      "Positive Neer's test",
-      "Positive Hawkins-Kennedy test",
-      "Pain with overhead activities",
-      "Pain on palpation of acromion and greater tuberosity",
-      "Restricted motion in abduction or flexion"
-    ],
-    accuracy: "Strong support for diagnosis when criteria combination is positive"
-  },
-  {
-    title: "Rotator Cuff Tear CPR",
-    description: "Identifies patients likely to have a rotator cuff tear",
-    criteria: [
-      "Age: Older than 60 years",
-      "Weakness in external rotation",
-      "Pain with shoulder motion",
-      "Night pain",
-      "Limited range of motion"
-    ],
-    accuracy: "High likelihood when 3 or more criteria are met, especially in patients over 60"
-  },
-  {
-    title: "Knee Osteoarthritis CPR",
-    description: "Identifies patients with knee osteoarthritis (OA)",
-    criteria: [
-      "Age: Greater than 50 years",
-      "Morning stiffness: Less than 30 minutes",
-      "Crepitus during knee motion",
-      "Bony enlargement of the knee",
-      "Pain with weight-bearing"
-    ],
-    accuracy: "Increased likelihood when pain and crepitus are present with other criteria"
-  },
-  {
-    title: "ACL Injury CPR",
-    description: "Helps predict the likelihood of ACL injury in patients presenting with knee pain",
-    criteria: [
-      "Age: Under 25 years",
-      "Sudden deceleration or pivoting injury",
-      "Positive Lachman's test",
-      "Positive anterior drawer test",
-      "Inability to hop on affected leg"
-    ],
-    accuracy: "High probability when at least 3 criteria are met"
-  },
-  {
-    title: "Patellofemoral Pain Syndrome CPR",
-    description: "Identifies patients with patellofemoral pain syndrome",
-    criteria: [
-      "Anterior knee pain",
-      "Pain with squatting or climbing stairs",
-      "Pain with prolonged sitting",
-      "Positive patellar grind test",
-      "Pain with resisted knee extension"
-    ],
-    accuracy: "Likely when 3 or more symptoms are present"
-  },
-  {
-    title: "Hip Osteoarthritis CPR",
-    description: "Predicts the likelihood of hip osteoarthritis (OA)",
-    criteria: [
-      "Age: > 50 years",
-      "Hip pain localized to groin or anterior hip",
-      "Morning stiffness < 60 minutes",
-      "Limited hip internal rotation",
-      "Pain with weight-bearing activities"
-    ],
-    accuracy: "Highly likely when 4 of 5 criteria are present"
-  },
-  {
-    title: "Hip Labral Tear CPR",
-    description: "Identifies patients with a hip labral tear",
-    criteria: [
-      "History of hip trauma or repetitive stress",
-      "Pain with deep hip flexion or internal rotation",
-      "Clicking or catching sensation",
-      "Pain with resisted hip flexion or abduction",
-      "Limited internal rotation"
-    ],
-    accuracy: "Likely when at least 3 factors are present"
-  },
-  {
-    title: "Plantar Fasciitis CPR",
-    description: "Helps diagnose plantar fasciitis in patients with heel pain",
-    criteria: [
-      "Pain on medial calcaneal tuberosity",
-      "Pain first thing in the morning",
-      "Pain with dorsiflexion",
-      "No pain with weight-bearing after warming up",
-      "Pain with prolonged standing"
-    ],
-    accuracy: "Likely when at least 3 criteria are present"
-  },
-  {
-    title: "Chronic Ankle Instability CPR",
-    description: "Identifies individuals at risk for chronic ankle instability following a sprain",
-    criteria: [
-      "History of recurrent ankle sprains",
-      "Self-reported feelings of instability",
-      "Positive ligamentous tests",
-      "Pain or weakness with functional activities",
-      "History of severe initial sprain"
-    ],
-    accuracy: "Likely when 3 or more criteria are present"
-  },
-  {
-    title: "Basic CPR",
-    description: "Basic CPR description",
-    criteria: [
-      "Criterion 1",
-      "Criterion 2",
-      "Criterion 3"
-    ],
-    accuracy: "Basic CPR accuracy"
+    evidence: {
+      source: "Wainner et al. (2003)",
+      sourceLink: "https://pubmed.ncbi.nlm.nih.gov/14508412/",
+      successRate: "Post-test probability of 90% when all 4 criteria are present",
+      likelihoodRatio: "Positive likelihood ratio: +30.3 (95% CI: 12.3, 74.4)",
+      cpgReferences: [
+        {
+          title: "Neck Pain Clinical Practice Guidelines",
+          section: "Diagnosis/Classification",
+          recommendation: "Clinicians should utilize the clinical findings of cervical rotation < 60°, spurling test, upper limb tension test, and distraction test for classifying patients with neck pain into the following categories: neck pain with mobility deficits, neck pain with radiating pain, neck pain with headache.",
+          grade: "Grade A",
+          link: "https://www.jospt.org/doi/10.2519/jospt.2017.0302",
+          year: "2017"
+        }
+      ]
+    }
   }
 ];
