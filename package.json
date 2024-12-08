@@ -1,0 +1,16 @@
+{
+  "name": "project-bolt",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@aws-sdk/client-secrets-manager": "^3.470.0",
+    "dotenv": "^16.4.7",
+    "zod": "^3.23.8"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  }
+}
