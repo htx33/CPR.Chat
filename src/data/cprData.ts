@@ -40,18 +40,11 @@ export const cprData: CPR[] = [
       likelihoodRatio: "Positive likelihood ratio: +24.38 (95% CI: 4.75, 139.72)",
       cpgReferences: [
         {
-          title: "Clinical Practice Guidelines Linked to the International Classification of Functioning, Disability, and Health from the Orthopaedic Section of the APTA",
+          title: "Clinical Practice Guidelines Linked to the ICF from the Orthopaedic Section of the APTA",
           section: "Manual Therapy: Thrust Manipulation",
           recommendation: "Clinicians should consider utilizing thrust manipulative procedures to reduce pain and disability in patients with mobility deficits and acute low back and back-related buttock or thigh pain.",
-          grade: "Grade A evidence",
-          link: "https://www.orthopt.org/content/practice/clinical-practice-guidelines/low-back-pain",
-          year: "2021"
-        },
-        {
-          title: "JOSPT Clinical Practice Guidelines for Low Back Pain",
-          section: "Intervention - Manual Therapy",
-          recommendation: "Use of prediction rule for manipulation supported by strong evidence for patients with acute symptoms.",
-          link: "https://www.jospt.org/doi/10.2519/jospt.2021.0304",
+          grade: "Grade A",
+          link: "https://www.jospt.org/doi/10.2519/jospt.2012.42.4.A1",
           year: "2021"
         }
       ]
@@ -60,35 +53,28 @@ export const cprData: CPR[] = [
   {
     id: "lumbar-stenosis",
     title: "Lumbar Spinal Stenosis CPR",
-    subtitle: "High likelihood of LSS when 3/5 criteria are present",
-    description: "Clinical prediction rule for diagnosing lumbar spinal stenosis",
+    subtitle: "Diagnostic accuracy improves with more criteria met",
+    description: "Helps identify patients likely to have lumbar spinal stenosis based on history and physical examination",
     clinicalCriteria: [
-      "Age > 48 years",
+      "Age > 60 years",
       "Bilateral symptoms",
-      "Leg pain greater than back pain",
-      "Pain improves with sitting",
-      "Pain worsens with standing"
+      "Symptoms improve with sitting",
+      "Symptoms worsen with standing and walking",
+      "Good relief with forward bending"
     ],
     evidence: {
       source: "Cook et al. (2011)",
       sourceLink: "https://pubmed.ncbi.nlm.nih.gov/21242568/",
-      successRate: "Sensitivity of 0.93 (95% CI: 0.87, 0.97) with 3+ criteria",
-      likelihoodRatio: "Positive likelihood ratio: +12.0 (95% CI: 5.9, 24.3) with 3+ criteria",
+      successRate: "Sensitivity of 0.93 and specificity of 0.86 when 3/5 criteria are met",
+      likelihoodRatio: "Positive likelihood ratio: +6.64 (95% CI: 4.14, 10.6)",
       cpgReferences: [
         {
-          title: "Diagnosis and Treatment of Degenerative Lumbar Spinal Stenosis",
-          section: "Diagnostic Procedures (Action Statement 3)",
-          recommendation: "Clinicians should include body pain diagram, assessment of walking tolerance, and questions regarding relief of symptoms with sitting as components of the baseline assessment for patients with degenerative lumbar spinal stenosis.",
-          grade: "Recommendation based on moderate evidence",
-          link: "https://www.orthopt.org/content/practice/clinical-practice-guidelines/lumbar-spinal-stenosis",
-          year: "2013"
-        },
-        {
-          title: "APTA Clinical Practice Guidelines - Lumbar Spinal Stenosis",
-          section: "Diagnosis/Classification",
-          recommendation: "Use of validated diagnostic rule recommended for identifying patients with lumbar spinal stenosis.",
-          link: "https://www.jospt.org/doi/10.2519/jospt.2013.0302",
-          year: "2013"
+          title: "NASS Evidence-Based Clinical Guidelines for Multidisciplinary Spine Care",
+          section: "Diagnosis/Imaging",
+          recommendation: "The history and physical examination are the most important tools in the diagnosis of lumbar spinal stenosis.",
+          grade: "Grade B",
+          link: "https://www.spine.org/Research-Clinical-Care/Quality-Improvement/Clinical-Guidelines",
+          year: "2020"
         }
       ]
     }
@@ -96,34 +82,27 @@ export const cprData: CPR[] = [
   {
     id: "cervical-radiculopathy",
     title: "Cervical Radiculopathy CPR",
-    subtitle: "High likelihood when at least 3/4 criteria are positive",
-    description: "Clinical prediction rule for diagnosing cervical radiculopathy",
+    subtitle: "Diagnostic accuracy improves with more tests positive",
+    description: "Helps identify patients with cervical radiculopathy using a cluster of tests",
     clinicalCriteria: [
-      "Upper limb tension test A (median nerve bias) is positive",
+      "Upper limb tension test 1 positive",
       "Cervical rotation < 60° toward the symptomatic side",
-      "Spurling test reproduces primary symptoms",
-      "Cervical distraction test relieves primary symptoms"
+      "Neck rotation toward the symptomatic side reproduces symptoms",
+      "Spurling test positive"
     ],
     evidence: {
       source: "Wainner et al. (2003)",
-      sourceLink: "https://pubmed.ncbi.nlm.nih.gov/12622147/",
-      successRate: "Probability increases to 90% when ≥ 3 tests are positive",
-      likelihoodRatio: "Positive likelihood ratio: +30.3 (95% CI: 12.3, 74.4) with 3+ criteria",
+      sourceLink: "https://pubmed.ncbi.nlm.nih.gov/14508412/",
+      successRate: "Post-test probability of 90% when all 4 criteria are present",
+      likelihoodRatio: "Positive likelihood ratio: +30.3 (95% CI: 12.3, 74.4)",
       cpgReferences: [
         {
-          title: "Neck Pain: Clinical Practice Guidelines (APTA)",
-          section: "Diagnosis/Classification (Recommendation B)",
-          recommendation: "Clinicians should utilize the clinical findings of cervical rotation < 60°, Spurling test, upper limb tension test, and cervical distraction test to make clinical judgments regarding the presence of cervical radiculopathy.",
-          grade: "Grade A evidence",
-          link: "https://www.orthopt.org/content/practice/clinical-practice-guidelines/neck-pain",
-          year: "2019"
-        },
-        {
-          title: "JOSPT Neck Pain Clinical Practice Guidelines",
-          section: "Physical Impairment Measures",
-          recommendation: "Strong evidence supports use of clustered physical examination items to identify patients with cervical radiculopathy.",
-          link: "https://www.jospt.org/doi/10.2519/jospt.2019.0302",
-          year: "2019"
+          title: "Neck Pain Clinical Practice Guidelines",
+          section: "Diagnosis/Classification",
+          recommendation: "Clinicians should utilize the clinical findings of cervical rotation < 60°, spurling test, upper limb tension test, and distraction test for classifying patients with neck pain into the following categories: neck pain with mobility deficits, neck pain with radiating pain, neck pain with headache.",
+          grade: "Grade A",
+          link: "https://www.jospt.org/doi/10.2519/jospt.2017.0302",
+          year: "2017"
         }
       ]
     }
