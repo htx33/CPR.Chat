@@ -10,34 +10,36 @@ export const cprData: CPR[] = [
     title: "Spinal Manipulation CPR for Low Back Pain",
     description: "Helps predict if a patient with acute low back pain is likely to benefit from spinal manipulation",
     criteria: [
-      "Duration of symptoms: Less than 16 days",
-      "No symptoms below the knee",
-      "Hip internal rotation: At least 1 hip with > 35 degrees of internal rotation",
-      "Low fear avoidance (measured by FABQ work subscale)",
-      "Absence of neurologic signs"
+      "Duration of symptoms < 16 days",
+      "No symptoms distal to the knee",
+      "Fear-Avoidance Beliefs Questionnaire work subscale score < 19",
+      "At least 1 hip with > 35° internal rotation range of motion",
+      "Hypomobility in the lumbar spine"
     ],
-    accuracy: "Beneficial when 4 out of 5 criteria are present"
+    accuracy: "+LR = 13.2 when 4/5 criteria are present"
   },
   {
     title: "Lumbar Spinal Stenosis CPR",
     description: "Helps identify patients with low back pain who are likely to have lumbar spinal stenosis (LSS)",
     criteria: [
-      "Age: Older than 50 years",
-      "Bilateral leg pain",
-      "Relief with flexion (bending forward or sitting)",
-      "Worsening symptoms with extension"
+      "Age > 48 years",
+      "Symptoms improve with sitting",
+      "Symptoms improve with bending forward",
+      "First symptoms of the day occur in the morning",
+      "Bilateral symptoms"
     ],
-    accuracy: "High likelihood of LSS when all criteria are present"
+    accuracy: "Sensitivity = 0.93, Specificity = 0.68 when 3/5 criteria are present"
   },
   {
     title: "Cervical Radiculopathy CPR",
     description: "Helps predict the likelihood of cervical radiculopathy in patients with neck pain and arm symptoms",
     criteria: [
-      "Positive upper limb tension test (ULTT)",
-      "Positive Spurling's test",
-      "Positive cervical distraction test"
+      "Upper limb tension test A (median nerve bias) is positive",
+      "Cervical rotation < 60° toward the symptomatic side",
+      "Spurling test reproduces symptoms",
+      "Distraction test relieves symptoms"
     ],
-    accuracy: "Highly likely when all 3 criteria are positive"
+    accuracy: "+LR = 30.3 when 3/4 criteria are present"
   },
   {
     title: "Cervical Manipulation CPR",
