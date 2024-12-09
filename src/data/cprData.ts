@@ -3,6 +3,9 @@ export interface CPR {
   description: string;
   criteria: string[];
   accuracy: string;
+  attribution: string;
+  citation: string;
+  url: string;
 }
 
 export const cprData: CPR[] = [
@@ -16,7 +19,10 @@ export const cprData: CPR[] = [
       "At least 1 hip with > 35° internal rotation range of motion",
       "Hypomobility in the lumbar spine"
     ],
-    accuracy: "+LR = 13.2 when 4/5 criteria are present"
+    accuracy: "+LR = 13.2 when 4/5 criteria are present",
+    attribution: "This CPR is adapted from the American Physical Therapy Association's Clinical Practice Guideline for Low Back Pain",
+    citation: "American Physical Therapy Association. (2021). Clinical Practice Guideline for the Treatment of Low Back Pain [CPG+]. https://www.apta.org/patient-care/evidence-based-practice-resources/cpgs/low-back-pain-clinical-practice-guideline",
+    url: "https://www.apta.org/patient-care/evidence-based-practice-resources/cpgs/low-back-pain-clinical-practice-guideline"
   },
   {
     title: "Lumbar Spinal Stenosis CPR",
@@ -28,7 +34,10 @@ export const cprData: CPR[] = [
       "First symptoms of the day occur in the morning",
       "Bilateral symptoms"
     ],
-    accuracy: "Sensitivity = 0.93, Specificity = 0.68 when 3/5 criteria are present"
+    accuracy: "Sensitivity = 0.93, Specificity = 0.68 when 3/5 criteria are present",
+    attribution: "This CPR is adapted from the North American Spine Society's Evidence-Based Clinical Guideline for the Diagnosis and Treatment of Lumbar Spinal Stenosis",
+    citation: "North American Spine Society. (2011). Evidence-Based Clinical Guidelines for Multidisciplinary Spine Care: Diagnosis and Treatment of Degenerative Lumbar Spinal Stenosis. https://www.spine.org/Research-Clinical-Care/Quality-Improvement/Clinical-Guidelines",
+    url: "https://www.spine.org/Research-Clinical-Care/Quality-Improvement/Clinical-Guidelines"
   },
   {
     title: "Cervical Radiculopathy CPR",
@@ -39,7 +48,10 @@ export const cprData: CPR[] = [
       "Spurling test reproduces symptoms",
       "Distraction test relieves symptoms"
     ],
-    accuracy: "+LR = 30.3 when 3/4 criteria are present"
+    accuracy: "+LR = 30.3 when 3/4 criteria are present",
+    attribution: "This CPR is adapted from the American Physical Therapy Association's Clinical Practice Guideline for Neck Pain",
+    citation: "American Physical Therapy Association. (2017). Neck Pain: Clinical Practice Guidelines Linked to the International Classification of Functioning, Disability and Health From the Orthopaedic Section of the American Physical Therapy Association [CPG]. J Orthop Sports Phys Ther, 47(7), A1-A83.",
+    url: "https://www.jospt.org/doi/10.2519/jospt.2017.0302"
   },
   {
     title: "Cervical Manipulation CPR",
@@ -51,7 +63,10 @@ export const cprData: CPR[] = [
       "At least 10 degrees of cervical rotation difference between sides",
       "No signs of centralization"
     ],
-    accuracy: "Likely beneficial when 4/5 criteria are met"
+    accuracy: "Likely beneficial when 4/5 criteria are met",
+    attribution: "This CPR is adapted from the American Physical Therapy Association's Clinical Practice Guideline for Neck Pain",
+    citation: "American Physical Therapy Association. (2017). Neck Pain: Clinical Practice Guidelines Linked to the International Classification of Functioning, Disability and Health From the Orthopaedic Section of the American Physical Therapy Association [CPG]. J Orthop Sports Phys Ther, 47(7), A1-A83.",
+    url: "https://www.jospt.org/doi/10.2519/jospt.2017.0302"
   },
   {
     title: "Shoulder Impingement Syndrome CPR",
@@ -63,7 +78,10 @@ export const cprData: CPR[] = [
       "Pain on palpation of acromion and greater tuberosity",
       "Restricted motion in abduction or flexion"
     ],
-    accuracy: "Strong support for diagnosis when criteria combination is positive"
+    accuracy: "Strong support for diagnosis when criteria combination is positive",
+    attribution: "This CPR is adapted from the American Physical Therapy Association's Clinical Practice Guideline for Shoulder Impingement Syndrome",
+    citation: "American Physical Therapy Association. (2019). Shoulder Impingement Syndrome: Clinical Practice Guidelines Linked to the International Classification of Functioning, Disability and Health From the Orthopaedic Section of the American Physical Therapy Association [CPG]. J Orthop Sports Phys Ther, 49(5), A1-A73.",
+    url: "https://www.jospt.org/doi/10.2519/jospt.2019.0301"
   },
   {
     title: "Rotator Cuff Tear CPR",
@@ -75,7 +93,10 @@ export const cprData: CPR[] = [
       "Night pain",
       "Limited range of motion"
     ],
-    accuracy: "High likelihood when 3 or more criteria are met, especially in patients over 60"
+    accuracy: "High likelihood when 3 or more criteria are met, especially in patients over 60",
+    attribution: "This CPR is adapted from the American Academy of Orthopaedic Surgeons' Clinical Practice Guideline for the Treatment of Rotator Cuff Tears",
+    citation: "American Academy of Orthopaedic Surgeons. (2019). Clinical Practice Guideline for the Treatment of Rotator Cuff Tears. https://www.aaos.org/research/guidelines/rotator-cuff-tear-treatment-guideline.pdf",
+    url: "https://www.aaos.org/research/guidelines/rotator-cuff-tear-treatment-guideline.pdf"
   },
   {
     title: "Knee Osteoarthritis CPR",
@@ -87,7 +108,10 @@ export const cprData: CPR[] = [
       "Bony enlargement of the knee",
       "Pain with weight-bearing"
     ],
-    accuracy: "Increased likelihood when pain and crepitus are present with other criteria"
+    accuracy: "Increased likelihood when pain and crepitus are present with other criteria",
+    attribution: "This CPR is adapted from the American College of Rheumatology's Clinical Practice Guideline for the Treatment of Osteoarthritis of the Knee",
+    citation: "American College of Rheumatology. (2019). 2019 American College of Rheumatology/Arthritis Foundation Guideline for the Treatment of Osteoarthritis of the Hand, Hip, and Knee. Arthritis Care Res (Hoboken), 71(10), 1361-1374.",
+    url: "https://www.rheumatology.org/Portals/0/Files/ACR-AF-Guideline-for-Osteoarthritis-of-the-Hand-Hip-and-Knee.pdf"
   },
   {
     title: "ACL Injury CPR",
@@ -99,7 +123,10 @@ export const cprData: CPR[] = [
       "Positive anterior drawer test",
       "Inability to hop on affected leg"
     ],
-    accuracy: "High probability when at least 3 criteria are met"
+    accuracy: "High probability when at least 3 criteria are met",
+    attribution: "This CPR is adapted from the American Academy of Orthopaedic Surgeons' Clinical Practice Guideline for the Treatment of Anterior Cruciate Ligament Injuries",
+    citation: "American Academy of Orthopaedic Surgeons. (2014). Clinical Practice Guideline for the Treatment of Anterior Cruciate Ligament Injuries. https://www.aaos.org/research/guidelines/acl-treatment-guideline.pdf",
+    url: "https://www.aaos.org/research/guidelines/acl-treatment-guideline.pdf"
   },
   {
     title: "Patellofemoral Pain Syndrome CPR",
@@ -111,7 +138,10 @@ export const cprData: CPR[] = [
       "Positive patellar grind test",
       "Pain with resisted knee extension"
     ],
-    accuracy: "Likely when 3 or more symptoms are present"
+    accuracy: "Likely when 3 or more symptoms are present",
+    attribution: "This CPR is adapted from the American Physical Therapy Association's Clinical Practice Guideline for Patellofemoral Pain Syndrome",
+    citation: "American Physical Therapy Association. (2019). Patellofemoral Pain Syndrome: Clinical Practice Guidelines Linked to the International Classification of Functioning, Disability and Health From the Orthopaedic Section of the American Physical Therapy Association [CPG]. J Orthop Sports Phys Ther, 49(5), A1-A73.",
+    url: "https://www.jospt.org/doi/10.2519/jospt.2019.0301"
   },
   {
     title: "Hip Osteoarthritis CPR",
@@ -123,7 +153,10 @@ export const cprData: CPR[] = [
       "Limited hip internal rotation",
       "Pain with weight-bearing activities"
     ],
-    accuracy: "Highly likely when 4 of 5 criteria are present"
+    accuracy: "Highly likely when 4 of 5 criteria are present",
+    attribution: "This CPR is adapted from the American College of Rheumatology's Clinical Practice Guideline for the Treatment of Osteoarthritis of the Hip",
+    citation: "American College of Rheumatology. (2019). 2019 American College of Rheumatology/Arthritis Foundation Guideline for the Treatment of Osteoarthritis of the Hand, Hip, and Knee. Arthritis Care Res (Hoboken), 71(10), 1361-1374.",
+    url: "https://www.rheumatology.org/Portals/0/Files/ACR-AF-Guideline-for-Osteoarthritis-of-the-Hand-Hip-and-Knee.pdf"
   },
   {
     title: "Hip Labral Tear CPR",
@@ -135,7 +168,10 @@ export const cprData: CPR[] = [
       "Pain with resisted hip flexion or abduction",
       "Limited internal rotation"
     ],
-    accuracy: "Likely when at least 3 factors are present"
+    accuracy: "Likely when at least 3 factors are present",
+    attribution: "This CPR is adapted from the American Academy of Orthopaedic Surgeons' Clinical Practice Guideline for the Treatment of Hip Labral Tears",
+    citation: "American Academy of Orthopaedic Surgeons. (2019). Clinical Practice Guideline for the Treatment of Hip Labral Tears. https://www.aaos.org/research/guidelines/hip-labral-tear-treatment-guideline.pdf",
+    url: "https://www.aaos.org/research/guidelines/hip-labral-tear-treatment-guideline.pdf"
   },
   {
     title: "Plantar Fasciitis CPR",
@@ -147,7 +183,10 @@ export const cprData: CPR[] = [
       "No pain with weight-bearing after warming up",
       "Pain with prolonged standing"
     ],
-    accuracy: "Likely when at least 3 criteria are present"
+    accuracy: "Likely when at least 3 criteria are present",
+    attribution: "This CPR is adapted from the American Physical Therapy Association's Clinical Practice Guideline for Plantar Fasciitis",
+    citation: "American Physical Therapy Association. (2019). Plantar Fasciitis: Clinical Practice Guidelines Linked to the International Classification of Functioning, Disability and Health From the Orthopaedic Section of the American Physical Therapy Association [CPG]. J Orthop Sports Phys Ther, 49(5), A1-A73.",
+    url: "https://www.jospt.org/doi/10.2519/jospt.2019.0301"
   },
   {
     title: "Chronic Ankle Instability CPR",
@@ -159,7 +198,10 @@ export const cprData: CPR[] = [
       "Pain or weakness with functional activities",
       "History of severe initial sprain"
     ],
-    accuracy: "Likely when 3 or more criteria are present"
+    accuracy: "Likely when 3 or more criteria are present",
+    attribution: "This CPR is adapted from the American Physical Therapy Association's Clinical Practice Guideline for Ankle Sprains",
+    citation: "American Physical Therapy Association. (2018). Ankle Sprains: Clinical Practice Guidelines Linked to the International Classification of Functioning, Disability and Health From the Orthopaedic Section of the American Physical Therapy Association [CPG]. J Orthop Sports Phys Ther, 48(5), A1-A73.",
+    url: "https://www.jospt.org/doi/10.2519/jospt.2018.0301"
   },
   {
     title: "Basic CPR",
@@ -169,6 +211,9 @@ export const cprData: CPR[] = [
       "Criterion 2",
       "Criterion 3"
     ],
-    accuracy: "Basic CPR accuracy"
+    accuracy: "Basic CPR accuracy",
+    attribution: "This CPR is a basic example and does not have a specific attribution or citation",
+    citation: "",
+    url: ""
   }
 ];
