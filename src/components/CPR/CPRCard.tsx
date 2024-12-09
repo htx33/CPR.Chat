@@ -29,7 +29,7 @@ const CPRCard: React.FC<CPRCardProps> = ({
           isFlipped ? 'hidden' : 'block'
         }`}
       >
-        <div className="bg-white rounded-xl shadow-md h-full flex flex-col">
+        <div className="bg-white rounded-xl shadow-md h-full flex flex-col transition-shadow duration-200">
           <div className="p-3 sm:p-6 flex-grow">
             <div className="flex flex-col gap-2 mb-3">
               <h3 className="text-base sm:text-xl font-semibold text-gray-900">{title}</h3>
@@ -70,7 +70,7 @@ const CPRCard: React.FC<CPRCardProps> = ({
           !isFlipped ? 'hidden' : 'block'
         }`}
       >
-        <div className="bg-white rounded-xl shadow-md h-full flex flex-col">
+        <div className="bg-white rounded-xl shadow-md h-full flex flex-col transition-shadow duration-200">
           <div className="p-3 sm:p-6 flex-grow">
             <h3 className="text-base sm:text-xl font-semibold text-gray-900 mb-4">Citation Information</h3>
             <div className="space-y-4">

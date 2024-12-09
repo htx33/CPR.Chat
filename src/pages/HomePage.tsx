@@ -41,7 +41,10 @@ const HomePage = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {filteredCPRs.map((cpr, index) => (
-            <div key={index} className="h-full">
+            <div 
+              key={index} 
+              className="h-full transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
+            >
               <CPRCard {...cpr} />
             </div>
           ))}
