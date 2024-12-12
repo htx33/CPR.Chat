@@ -9,15 +9,15 @@ export interface CPR {
 export const cprData: CPR[] = [
   {
     title: "Spinal Manipulation CPR for Low Back Pain",
-    description: "Helps predict if a patient with acute low back pain is likely to benefit from spinal manipulation",
+    description: "Clinical prediction rule to identify patients with low back pain likely to benefit from spinal manipulation",
     criteria: [
-      "Duration of symptoms: Less than 16 days",
-      "No symptoms below the knee",
-      "Hip internal rotation: At least 1 hip with > 35 degrees of internal rotation",
-      "Low fear avoidance (measured by FABQ work subscale)",
-      "Absence of neurologic signs"
+      "Duration of symptoms < 16 days",
+      "No symptoms distal to the knee",
+      "At least one hip with > 35° internal rotation",
+      "FABQ work subscale score < 19",
+      "Hypomobility in ≥1 lumbar segment"
     ],
-    accuracy: "Beneficial when 4 out of 5 criteria are present",
+    accuracy: "When 4/5 criteria are met: +LR = 24.0, success rate of 95% with manipulation",
     references: [
       "Flynn T, Fritz J, Whitman J, et al. A clinical prediction rule for classifying patients with low back pain who demonstrate short-term improvement with spinal manipulation. Spine. 2002;27(24):2835-2843. DOI: 10.1097/00007632-200212150-00018",
       "Childs JD, Fritz JM, Flynn TW, et al. A clinical prediction rule to identify patients with low back pain most likely to benefit from spinal manipulation: a validation study. Ann Intern Med. 2004;141(12):920-928. DOI: 10.7326/0003-4819-141-12-200412210-00008"
@@ -25,14 +25,15 @@ export const cprData: CPR[] = [
   },
   {
     title: "Lumbar Spinal Stenosis CPR",
-    description: "Helps identify patients with low back pain who are likely to have lumbar spinal stenosis (LSS)",
+    description: "Clinical prediction rule for diagnosing lumbar spinal stenosis in patients with low back and leg symptoms",
     criteria: [
-      "Age: Older than 50 years",
-      "Bilateral leg pain",
-      "Relief with flexion (bending forward or sitting)",
-      "Worsening symptoms with extension"
+      "Age > 60 years",
+      "Improved with sitting",
+      "Improved with forward flexion",
+      "No pain when seated",
+      "Bilateral leg symptoms"
     ],
-    accuracy: "High likelihood of LSS when all criteria are present",
+    accuracy: "When ≥3/5 criteria are met: sensitivity 89%, specificity 52%",
     references: [
       "Cook CJ, Cook CE, Reiman MP, et al. Systematic review of diagnostic accuracy of patient history, clinical findings, and physical tests in the diagnosis of lumbar spinal stenosis. Eur Spine J. 2020;29(1):93-112. DOI: 10.1007/s00586-019-06048-4",
       "Katz JN, Dalgas M, Stucki G, et al. Degenerative lumbar spinal stenosis. Diagnostic value of the history and physical examination. Arthritis Rheum. 1995;38(9):1236-1241. DOI: 10.1002/art.1780380910"
@@ -40,13 +41,15 @@ export const cprData: CPR[] = [
   },
   {
     title: "Cervical Radiculopathy CPR",
-    description: "Helps predict the likelihood of cervical radiculopathy in patients with neck pain and arm symptoms",
+    description: "Clinical prediction rule for diagnosing cervical radiculopathy",
     criteria: [
-      "Positive upper limb tension test (ULTT)",
-      "Positive Spurling's test",
-      "Positive cervical distraction test"
+      "Cervical rotation < 60° on involved side",
+      "Positive ULTT-A (median nerve bias)",
+      "Positive Spurling test",
+      "Diminished deep tendon reflexes",
+      "Dermatomal sensory changes"
     ],
-    accuracy: "Highly likely when all 3 criteria are positive",
+    accuracy: "When ≥3/4 tests positive: +LR = 6.1, probability of cervical radiculopathy increases from 50% to 90%",
     references: [
       "Wainner RS, Fritz JM, Irrgang JJ, et al. Development of a clinical prediction rule for the diagnosis of cervical radiculopathy. Arch Phys Med Rehabil. 2003;84(1):4-11. DOI: 10.1053/apmr.2003.50024",
       "Thoomes EJ, van Geest S, van der Windt DA, et al. Value of physical tests in diagnosing cervical radiculopathy: a systematic review. Spine J. 2018;18(1):179-189. DOI: 10.1016/j.spinee.2017.08.241"
@@ -70,14 +73,15 @@ export const cprData: CPR[] = [
   },
   {
     title: "Shoulder Impingement Syndrome CPR",
-    description: "Identifies patients with shoulder pain likely to have impingement syndrome",
+    description: "Clinical tests combination for diagnosing subacromial impingement syndrome",
     criteria: [
       "Positive Hawkins-Kennedy test",
-      "Painful arc during abduction",
-      "Pain on palpation of acromion and greater tuberosity",
-      "Restricted motion in abduction or flexion"
+      "Painful arc 60°-120°",
+      "Positive empty can test",
+      "Weakness in external rotation",
+      "Pain with palpation of rotator cuff tendons"
     ],
-    accuracy: "Strong support for diagnosis when criteria combination is positive",
+    accuracy: "When ≥3/5 tests positive: sensitivity 75%, specificity 74%",
     references: [
       "Michener LA, Walsworth MK, Doukas WC, Murphy KP. Reliability and diagnostic accuracy of 5 physical examination tests and combination of tests for subacromial impingement. Arch Phys Med Rehabil. 2009;90(11):1898-1903. DOI: 10.1016/j.apmr.2009.05.015",
       "Hegedus EJ, Goode AP, Cook CE, et al. Which physical examination tests provide clinicians with the most value when examining the shoulder? Update of a systematic review with meta-analysis of individual tests. Br J Sports Med. 2012;46(14):964-978. DOI: 10.1136/bjsports-2012-091066"
@@ -85,14 +89,15 @@ export const cprData: CPR[] = [
   },
   {
     title: "Rotator Cuff Tear CPR",
-    description: "Helps identify patients likely to have a rotator cuff tear",
+    description: "Clinical prediction rule for diagnosing rotator cuff tears",
     criteria: [
-      "Age > 60 years",
-      "Weakness in external rotation",
+      "Age > 65 years",
       "Night pain",
-      "Limited range of motion"
+      "Weakness in external rotation",
+      "Positive painful arc test",
+      "Positive drop-arm test"
     ],
-    accuracy: "High likelihood when 3 or more criteria are met, especially in patients over 60",
+    accuracy: "When ≥3/5 criteria present: sensitivity 83%, specificity 74%",
     references: [
       "Park HB, Yokota A, Gill HS, El Rassi G, McFarland EG. Diagnostic accuracy of clinical tests for the different degrees of subacromial impingement syndrome. J Bone Joint Surg Am. 2005;87(7):1446-1455. DOI: 10.2106/JBJS.D.02335",
       "Hermans J, Luime JJ, Meuffels DE, et al. Does this patient with shoulder pain have rotator cuff disease? The Rational Clinical Examination systematic review. JAMA. 2013;310(8):837-847. DOI: 10.1001/jama.2013.276187"
@@ -100,15 +105,16 @@ export const cprData: CPR[] = [
   },
   {
     title: "Knee Osteoarthritis CPR",
-    description: "Helps identify patients with knee pain likely to have osteoarthritis",
+    description: "Clinical criteria for diagnosing knee osteoarthritis",
     criteria: [
       "Age > 50 years",
-      "Morning stiffness < 30 minutes",
-      "Crepitus with active motion",
-      "Bony enlargement of the knee",
-      "Pain with weight-bearing"
+      "Morning stiffness ≤ 30 minutes",
+      "Crepitus during active motion",
+      "Bony tenderness",
+      "Bony enlargement",
+      "No palpable warmth"
     ],
-    accuracy: "Increased likelihood when pain and crepitus are present with other criteria",
+    accuracy: "When ≥3 criteria present (including crepitus): sensitivity 95%, specificity 69%",
     references: [
       "Altman R, Asch E, Bloch D, et al. Development of criteria for the classification and reporting of osteoarthritis. Classification of osteoarthritis of the knee. Arthritis Rheum. 1986;29(8):1039-1049. DOI: 10.1002/art.1780290816",
       "Zhang W, Doherty M, Peat G, et al. EULAR evidence-based recommendations for the diagnosis of knee osteoarthritis. Ann Rheum Dis. 2010;69(3):483-489. DOI: 10.1136/ard.2009.113100"
@@ -116,15 +122,15 @@ export const cprData: CPR[] = [
   },
   {
     title: "ACL Injury CPR",
-    description: "Helps identify patients with knee injury likely to have ACL tear",
+    description: "Clinical prediction rule for diagnosing ACL tears",
     criteria: [
       "Positive Lachman test",
-      "History of 'pop' during injury",
+      "Immediate effusion (<12 hours post-injury)",
+      "Audible pop at time of injury",
       "Positive pivot shift test",
-      "Positive anterior drawer test",
-      "Inability to hop on affected leg"
+      "Inability to continue activity after injury"
     ],
-    accuracy: "High probability when at least 3 criteria are met",
+    accuracy: "Lachman test alone: sensitivity 85%, specificity 94%. When multiple tests positive, specificity increases to 98%",
     references: [
       "Benjaminse A, Gokeler A, van der Schans CP. Clinical diagnosis of an anterior cruciate ligament rupture: a meta-analysis. J Orthop Sports Phys Ther. 2006;36(5):267-288. DOI: 10.2519/jospt.2006.2011",
       "Leblanc MC, Kowalczuk M, Andruszkiewicz N, et al. Diagnostic accuracy of physical examination for anterior cruciate ligament injury: a systematic review. Br J Sports Med. 2015;49(22):1467-1472. DOI: 10.1136/bjsports-2013-092791"
@@ -132,15 +138,15 @@ export const cprData: CPR[] = [
   },
   {
     title: "Patellofemoral Pain Syndrome CPR",
-    description: "Identifies patients with anterior knee pain likely to have PFPS",
+    description: "Clinical prediction rule for diagnosing patellofemoral pain syndrome",
     criteria: [
       "Age < 50 years",
-      "Insidious onset",
-      "Pain with squatting/stairs",
-      "Positive patellar grind test",
-      "Pain with resisted knee extension"
+      "Anterior or retropatellar knee pain",
+      "Pain aggravated by ≥2: prolonged sitting, stairs, squatting, running, kneeling",
+      "Insidious onset of symptoms (no trauma)",
+      "Positive patellar compression test"
     ],
-    accuracy: "Likely when 3 or more symptoms are present",
+    accuracy: "When ≥4/5 criteria present: sensitivity 91%, specificity 78%",
     references: [
       "Cook C, Mabry L, Reiman MP, Hegedus EJ. Best tests/clinical findings for screening and diagnosis of patellofemoral pain syndrome: a systematic review. Physiotherapy. 2012;98(2):93-100. DOI: 10.1016/j.physio.2011.09.001",
       "Crossley KM, Stefanik JJ, Selfe J, et al. 2016 Patellofemoral pain consensus statement from the 4th International Patellofemoral Pain Research Retreat. Br J Sports Med. 2016;50(14):839-843. DOI: 10.1136/bjsports-2016-096384"
@@ -148,15 +154,15 @@ export const cprData: CPR[] = [
   },
   {
     title: "Hip Osteoarthritis CPR",
-    description: "Helps identify patients with hip pain likely to have osteoarthritis",
+    description: "Clinical criteria for diagnosing hip osteoarthritis",
     criteria: [
+      "Hip pain present on most days of prior month",
+      "Hip internal rotation < 15°",
+      "Morning stiffness ≤ 60 minutes",
       "Age > 50 years",
-      "Morning stiffness < 60 minutes",
-      "Hip pain with internal rotation",
-      "Limited hip internal rotation",
-      "Pain with weight-bearing activities"
+      "Pain with hip internal rotation"
     ],
-    accuracy: "Highly likely when 4 of 5 criteria are present",
+    accuracy: "When ≥4 criteria present: sensitivity 86%, specificity 75%",
     references: [
       "Altman R, Alarcón G, Appelrouth D, et al. The American College of Rheumatology criteria for the classification and reporting of osteoarthritis of the hip. Arthritis Rheum. 1991;34(5):505-514. DOI: 10.1002/art.1780340502",
       "Kim C, Nevitt MC, Niu J, et al. Association of hip pain with radiographic evidence of hip osteoarthritis: diagnostic test study. BMJ. 2015;351:h5983. DOI: 10.1136/bmj.h5983"
