@@ -6,9 +6,10 @@ interface CPRCardProps {
   description: string;
   criteria: string[];
   accuracy: string;
+  references: string[];
 }
 
-const CPRCard: React.FC<CPRCardProps> = ({ title, description, criteria, accuracy }) => {
+const CPRCard: React.FC<CPRCardProps> = ({ title, description, criteria, accuracy, references }) => {
   return (
     <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-200 overflow-hidden h-full">
       <div className="p-4 sm:p-6">
@@ -27,6 +28,17 @@ const CPRCard: React.FC<CPRCardProps> = ({ title, description, criteria, accurac
               <li key={index} className="flex items-start space-x-2 text-sm sm:text-base text-gray-600">
                 <ChevronRight className="h-4 w-4 sm:h-5 sm:w-5 text-blue-500 flex-shrink-0 mt-0.5" />
                 <span className="flex-grow">{criterion}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="mt-4 space-y-2 sm:space-y-3 border-t border-gray-100 pt-4">
+          <h4 className="font-medium text-gray-800 text-sm sm:text-base">References:</h4>
+          <ul className="space-y-2">
+            {references.map((reference, index) => (
+              <li key={index} className="text-sm sm:text-base text-gray-600">
+                {index + 1}. {reference}
               </li>
             ))}
           </ul>

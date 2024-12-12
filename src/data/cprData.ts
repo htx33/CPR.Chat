@@ -3,6 +3,7 @@ export interface CPR {
   description: string;
   criteria: string[];
   accuracy: string;
+  references: string[];
 }
 
 export const cprData: CPR[] = [
@@ -16,7 +17,11 @@ export const cprData: CPR[] = [
       "Low fear avoidance (measured by FABQ work subscale)",
       "Absence of neurologic signs"
     ],
-    accuracy: "Beneficial when 4 out of 5 criteria are present"
+    accuracy: "Beneficial when 4 out of 5 criteria are present",
+    references: [
+      "Flynn T, Fritz J, Whitman J, et al. A clinical prediction rule for classifying patients with low back pain who demonstrate short-term improvement with spinal manipulation. Spine. 2002;27(24):2835-2843.",
+      "Childs JD, Fritz JM, Flynn TW, et al. A clinical prediction rule to identify patients with low back pain most likely to benefit from spinal manipulation: a validation study. Ann Intern Med. 2004;141(12):920-928."
+    ]
   },
   {
     title: "Lumbar Spinal Stenosis CPR",
@@ -27,7 +32,11 @@ export const cprData: CPR[] = [
       "Relief with flexion (bending forward or sitting)",
       "Worsening symptoms with extension"
     ],
-    accuracy: "High likelihood of LSS when all criteria are present"
+    accuracy: "High likelihood of LSS when all criteria are present",
+    references: [
+      "Cook CJ, Cook CE, Reiman MP, et al. Systematic review of diagnostic accuracy of patient history, clinical findings, and physical tests in the diagnosis of lumbar spinal stenosis. Eur Spine J. 2020;29(1):93-112.",
+      "Katz JN, Dalgas M, Stucki G, et al. Degenerative lumbar spinal stenosis. Diagnostic value of the history and physical examination. Arthritis Rheum. 1995;38(9):1236-1241."
+    ]
   },
   {
     title: "Cervical Radiculopathy CPR",
@@ -37,7 +46,11 @@ export const cprData: CPR[] = [
       "Positive Spurling's test",
       "Positive cervical distraction test"
     ],
-    accuracy: "Highly likely when all 3 criteria are positive"
+    accuracy: "Highly likely when all 3 criteria are positive",
+    references: [
+      "Wainner RS, Fritz JM, Irrgang JJ, et al. Development of a clinical prediction rule for the diagnosis of cervical radiculopathy. Arch Phys Med Rehabil. 2003;84(1):4-11.",
+      "Thoomes EJ, van Geest S, van der Windt DA, et al. Value of physical tests in diagnosing cervical radiculopathy: a systematic review. Spine J. 2018;18(1):179-189."
+    ]
   },
   {
     title: "Cervical Manipulation CPR",
@@ -49,7 +62,11 @@ export const cprData: CPR[] = [
       "At least 10 degrees of cervical rotation difference between sides",
       "No signs of centralization"
     ],
-    accuracy: "Likely beneficial when 4/5 criteria are met"
+    accuracy: "Success rate increases when all criteria are met",
+    references: [
+      "Tseng YL, Wang WT, Chen WY, et al. Predictors for the immediate responders to cervical manipulation in patients with neck pain. Man Ther. 2006;11(4):306-315.",
+      "Cleland JA, Childs JD, Fritz JM, et al. Development of a clinical prediction rule for guiding treatment of a subgroup of patients with neck pain: use of thoracic spine manipulation, exercise, and patient education. Phys Ther. 2007;87(1):9-23."
+    ]
   },
   {
     title: "Shoulder Impingement Syndrome CPR",
@@ -61,7 +78,8 @@ export const cprData: CPR[] = [
       "Pain on palpation of acromion and greater tuberosity",
       "Restricted motion in abduction or flexion"
     ],
-    accuracy: "Strong support for diagnosis when criteria combination is positive"
+    accuracy: "Strong support for diagnosis when criteria combination is positive",
+    references: []
   },
   {
     title: "Rotator Cuff Tear CPR",
@@ -73,7 +91,8 @@ export const cprData: CPR[] = [
       "Night pain",
       "Limited range of motion"
     ],
-    accuracy: "High likelihood when 3 or more criteria are met, especially in patients over 60"
+    accuracy: "High likelihood when 3 or more criteria are met, especially in patients over 60",
+    references: []
   },
   {
     title: "Knee Osteoarthritis CPR",
@@ -85,7 +104,8 @@ export const cprData: CPR[] = [
       "Bony enlargement of the knee",
       "Pain with weight-bearing"
     ],
-    accuracy: "Increased likelihood when pain and crepitus are present with other criteria"
+    accuracy: "Increased likelihood when pain and crepitus are present with other criteria",
+    references: []
   },
   {
     title: "ACL Injury CPR",
@@ -97,7 +117,8 @@ export const cprData: CPR[] = [
       "Positive anterior drawer test",
       "Inability to hop on affected leg"
     ],
-    accuracy: "High probability when at least 3 criteria are met"
+    accuracy: "High probability when at least 3 criteria are met",
+    references: []
   },
   {
     title: "Patellofemoral Pain Syndrome CPR",
@@ -109,7 +130,8 @@ export const cprData: CPR[] = [
       "Positive patellar grind test",
       "Pain with resisted knee extension"
     ],
-    accuracy: "Likely when 3 or more symptoms are present"
+    accuracy: "Likely when 3 or more symptoms are present",
+    references: []
   },
   {
     title: "Hip Osteoarthritis CPR",
@@ -121,7 +143,8 @@ export const cprData: CPR[] = [
       "Limited hip internal rotation",
       "Pain with weight-bearing activities"
     ],
-    accuracy: "Highly likely when 4 of 5 criteria are present"
+    accuracy: "Highly likely when 4 of 5 criteria are present",
+    references: []
   },
   {
     title: "Hip Labral Tear CPR",
@@ -133,7 +156,8 @@ export const cprData: CPR[] = [
       "Pain with resisted hip flexion or abduction",
       "Limited internal rotation"
     ],
-    accuracy: "Likely when at least 3 factors are present"
+    accuracy: "Likely when at least 3 factors are present",
+    references: []
   },
   {
     title: "Plantar Fasciitis CPR",
@@ -145,7 +169,8 @@ export const cprData: CPR[] = [
       "No pain with weight-bearing after warming up",
       "Pain with prolonged standing"
     ],
-    accuracy: "Likely when at least 3 criteria are present"
+    accuracy: "Likely when at least 3 criteria are present",
+    references: []
   },
   {
     title: "Chronic Ankle Instability CPR",
@@ -157,7 +182,8 @@ export const cprData: CPR[] = [
       "Pain or weakness with functional activities",
       "History of severe initial sprain"
     ],
-    accuracy: "Likely when 3 or more criteria are present"
+    accuracy: "Likely when 3 or more criteria are present",
+    references: []
   },
   {
     title: "Basic CPR",
@@ -167,6 +193,7 @@ export const cprData: CPR[] = [
       "Criterion 2",
       "Criterion 3"
     ],
-    accuracy: "Basic CPR accuracy"
+    accuracy: "Basic CPR accuracy",
+    references: []
   }
 ];
