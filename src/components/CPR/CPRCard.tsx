@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ChevronRight } from 'lucide-react';
+import { trackCPRInteraction } from '../../utils/analytics';
 
 interface CPRCardProps {
   title: string;
@@ -10,6 +11,22 @@ interface CPRCardProps {
 }
 
 const CPRCard: React.FC<CPRCardProps> = ({ title, description, criteria, accuracy, references }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const handleViewDetails = () => {
+    setIsExpanded(!isExpanded);
+    trackCPRInteraction(title, isExpanded ? 'collapse_details' : 'view_details');
+  };
+
+  const handleReferenceClick = (reference: string) => {
+    trackCPRInteraction(title, 'click_reference');
+    // Extract DOI if present
+    const doiMatch = reference.match(/DOI: (.*?)$/);
+    if (doiMatch && doiMatch[1]) {
+      window.open(`https://doi.org/${doiMatch[1]}`, '_blank');
+    }
+  };
+
   return (
     <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-200 overflow-hidden h-full">
       <div className="p-4 sm:p-6">
@@ -37,7 +54,11 @@ const CPRCard: React.FC<CPRCardProps> = ({ title, description, criteria, accurac
           <h4 className="font-medium text-gray-800 text-sm sm:text-base">References:</h4>
           <ul className="space-y-2">
             {references.map((reference, index) => (
-              <li key={index} className="text-sm sm:text-base text-gray-600">
+              <li 
+                key={index} 
+                className="text-sm sm:text-base text-gray-600 hover:text-blue-600 cursor-pointer"
+                onClick={() => handleReferenceClick(reference)}
+              >
                 {index + 1}. {reference}
               </li>
             ))}
@@ -46,8 +67,11 @@ const CPRCard: React.FC<CPRCardProps> = ({ title, description, criteria, accurac
       </div>
       
       <div className="px-4 sm:px-6 py-3 sm:py-4 bg-gray-50 border-t border-gray-100 mt-auto">
-        <button className="w-full text-center text-blue-600 hover:text-blue-700 font-medium transition-colors text-sm sm:text-base">
-          View Details
+        <button 
+          className="w-full text-center text-blue-600 hover:text-blue-700 font-medium transition-colors text-sm sm:text-base"
+          onClick={handleViewDetails}
+        >
+          {isExpanded ? 'Hide Details' : 'View Details'}
         </button>
       </div>
     </div>
